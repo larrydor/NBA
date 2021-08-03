@@ -5,9 +5,11 @@ import requests
 
 print("-------------------------")
 x = input("Do you want to find the best player for your team? (Type Yes or No):")
-print("Great, let's do this. Here's the entire list of available players...")
-
-
+if (x == "Yes"):
+    print("Great, let's do this. Here's the entire list of available players...")
+else:
+    print("Alright, well good luck building a championship team without us! Have a good day :-)")
+    exit()
 import json
 import requests
 import os
@@ -35,6 +37,13 @@ data = res.read()
 print(data)
 
 y = input("Now, what position are you looking for? (Input PG, SG, SF, PF, or C):")
-
-
-
+if (y == "PG"):
+    print("Here's a list of available Point Guards:")
+if (y == "SG"):
+    print("Here's a list of available Shooting Guards:")
+if (y == "SF"):
+    print("Here's a list of available Small Forwards:")
+if (y == "SG"):
+    print("Here's a list of available Power Forwards:")
+if (y == "C"):
+    print("Here's a list of available Centers:")
