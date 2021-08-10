@@ -1,21 +1,21 @@
-import pytest
 import requests
-import json
 import os
-import ast
 from dotenv.main import load_dotenv
 import http.client
 load_dotenv()
 API = os.getenv("api_key")
 
-@pytest.fixture(scope="module")
-def parsed_response():
-    print("MAKING A NETWORK REQUEST...")    
-    conn = http.client.HTTPSConnection("api.sportradar.us")
-    conn.request("GET", f"/nba/trial/v7/en/teams/583ecae2-fb46-11e1-82cb-f4ce4684ea4c/profile.json?api_key={API}")  
-    res_nba_teams = conn.getresponse()
-    nba_teams_data = res_nba_teams.read()
-    nba_teams_dict_str = nba_teams_data.decode("UTF-8")
-    nba_teams_datas = ast.literal_eval(nba_teams_dict_str)
-    print(team_players)
-    return nba_teams_datas
+def test_home():
+    "GET request to url returns a 200"
+    url = "api.sportradar.us"
+    resp = requests.get(url)
+    assert resp.status_code == 200
+
+#def test_http_to_https_redirect():
+#    "HTTP requests should be redirected to HTTPS"
+#    conn = http.client.HTTPSConnection("api.sportradar.us")
+#    resp = conn.request("GET", f"/nba/trial/v7/en/teams/583ecae2-fb46-11e1-82cb-f4ce4684ea4c/profile.json?api_key={API}")
+#    #assert resp.url == 'api.sportradar.us'
+#    assert resp.history[0].status_code == 301
+
+#source: https://gist.github.com/smajda/005f34e88ffa998e02dd
