@@ -12,7 +12,7 @@ API = os.getenv("api_key")
 
 if __name__ == "__main__":
 
-    print("Welcome to the Free Agent Search Tool!")
+    print("Welcome to the GM Assist: NBA Free Agent Tracker Tool!")
     print("-------------------------")
     print("NBA Teams: Lakers, Warriors, Celtics, Knicks, Suns, Bucks, Nets, Raptors, 76ers, Mavericks, Clippers, Spurs, Jazz, Heat, Wizards, Trail Blazers, Hawks, Kings, Rockets, Hornets, Nuggets, Cavaliers, Pelicans, Pacers, Timberwolves, Grizzlies, Magic, Pistons, Bulls")
     print("-------------------------")

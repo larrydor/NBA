@@ -1,6 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/17097606dbcde4fa4d37/maintainability)](https://codeclimate.com/github/larrydor/NBA/maintainability)
 
-# National Basketball Association - Team Roster and Free Agent Search Application
+# GM Assist: NBA Free Agent Tracker Tool!
 
 A Python application that utilizes National Basketball Association (NBA) focused APIs from sportradar.us to retrieve all team rosters and available free agents. This application allows a user to easily retrieve key information on team players and search for available free agents with an experience requirement if desired. Furthermore, we have added CSV functionality to seamlessly allow a user to export the free agents data.
 
