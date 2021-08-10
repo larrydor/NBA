@@ -10,14 +10,7 @@ load_dotenv()
 
 API = os.getenv("api_key")
 
-if __name__ == "__main__":
-
-    print("Welcome to the GM Assist: NBA Free Agent Tracker Tool!")
-    print("-------------------------")
-    print("NBA Teams: Lakers, Warriors, Celtics, Knicks, Suns, Bucks, Nets, Raptors, 76ers, Mavericks, Clippers, Spurs, Jazz, Heat, Wizards, Trail Blazers, Hawks, Kings, Rockets, Hornets, Nuggets, Cavaliers, Pelicans, Pacers, Timberwolves, Grizzlies, Magic, Pistons, Bulls")
-    print("-------------------------")
-    desired_team = input("Which team do you want to be the GM for? ")
-    print(f"Great, you are the GM of the {desired_team}. Here's your current roster:")
+def fetch_roster(desired_team):
     if (desired_team == "Lakers"):
         team_id = '583ecae2-fb46-11e1-82cb-f4ce4684ea4c'
     if (desired_team == "Warriors"):
@@ -131,7 +124,19 @@ if __name__ == "__main__":
             clean_team_player["birthplace"] = "N/A"
         clean_team_players.append(clean_team_player)
     #source: Professor Rossetti in class 10 explained how to convert our orginal data to a clean list
+    return clean_team_players
 
+
+if __name__ == "__main__":
+
+    print("Welcome to the GM Assist: NBA Free Agent Tracker Tool!")
+    print("-------------------------")
+    print("NBA Teams: Lakers, Warriors, Celtics, Knicks, Suns, Bucks, Nets, Raptors, 76ers, Mavericks, Clippers, Spurs, Jazz, Heat, Wizards, Trail Blazers, Hawks, Kings, Rockets, Hornets, Nuggets, Cavaliers, Pelicans, Pacers, Timberwolves, Grizzlies, Magic, Pistons, Bulls")
+    print("-------------------------")
+    desired_team = input("Which team do you want to be the GM for? ")
+    print(f"Great, you are the GM of the {desired_team}. Here's your current roster:")
+
+    clean_team_players = fetch_roster(desired_team)
     for item in clean_team_players:
         try:
             print(f'Player Name: {item["name"]}, Position: ({item["general_position"]}), Primary Position: ({item["position"]}), Years of Experience: ({item["experience"]}), College: {item["college"]}, Height (inches): ({item["height"]}), Weight (lbs): ({item["weight"]}), Birthdate: ({item["birthdate"]}), Place of Birth: {item["birthplace"]}')
