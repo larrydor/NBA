@@ -113,7 +113,7 @@ def fetch_roster(desired_team):
         try:
             clean_team_player["weight"] = float(item["weight"])
         except KeyError:
-            clean_team_player["height"] = "N/A"
+            clean_team_player["weight"] = "N/A"
         try:
             clean_team_player["birthdate"] = item["birthdate"]
         except KeyError:
@@ -190,7 +190,7 @@ if __name__ == "__main__":
         try:
             clean_player["weight"] = float(player["weight"])
         except KeyError:
-            clean_player["height"] = "N/A"
+            clean_player["weight"] = "N/A"
         try:
             clean_player["birthdate"] = player["birthdate"]
         except KeyError:
